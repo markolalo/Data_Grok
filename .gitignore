@@ -1,0 +1,12 @@
+# Ignore big data files
+*.csv
+*.tsv
+# Ignore sensitive data files
+.env
+#Ignore virtual environment files
+.venv
+.conda
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+# Ignore Python byte code
+__pycache__
