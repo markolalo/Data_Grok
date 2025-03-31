@@ -3,11 +3,21 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
 import time
+import logging
+import sys
 import base64
 import json
 import pandas as pd
 from api import SynchroteamAPI
 from JsonFlatener import JsonFlatener
+
+# Set up logging
+logging.basicConfig(
+    filename='synchroteam.log',
+    filemode='a',
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s'
+    )
 
 # Load environment variables from .env file
 load_dotenv()
@@ -48,16 +58,33 @@ while True:
         data = response.json()
         jobs = data.get('data', []) # Extract the 'data' field from the
         if not jobs:
-            print('No more data available')
+            logging.info('No more data available')
             break
         all_jobs.extend(jobs)
-        print(f'Page {page}: {len(jobs)} jobs')
+        logging.info(f'Fetched page {page} with {len(jobs)} jobs')
         page += 1
         time.sleep(1) # Sleep for 1 second to avoid rate limiting
 
     except requests.exceptions.HTTPError as err:
-        print(f'Error on page {page}: {response.status_code} - {response.text}')
+        logging.error(f'Error on page {page}: {response.status_code} - {response.text}')
         break
+
+# Data Validation
+def validate_data(df):
+    issues = []
+    # Check for missing technicians
+    missing_technicians = df['technician'].isnull() | (df['technician'] == 'Unknown')
+    if missing_technicians.any():
+        issues.append(f'Found {missing_technicians.sum()} rows with missing or unknown technicians')
+        logging.warning(issues[-1])
+
+    # Check for invalid dates
+    df['scheduledStart'] = pd.to_datetime(df['scheduledStart'], errors='coerce')
+    invalid_dates = df['scheduledStart'].isnull()
+    if invalid_dates.any():
+        issues.append(f'Found {invalid_dates.sum()} rows with invalid scheduleStart dates')
+        logging.warning(issues[-1])
+    return len(issues) == 0, issues
 
 #Check if the response is valid
 if all_jobs:
@@ -71,10 +98,19 @@ if all_jobs:
     df['type'] = df['type'].apply(flatener.flatten_json)
     df['createdBy'] = df['createdBy'].apply(flatener.flatten_json)
 
+    # Validate the data
+    is_valid, issues = validate_data(df)
+    if not is_valid:
+        logging.error('Data validation failed with issues:')
+        for issue in issues:
+            logging.error(issue)
+    else:
+        logging.info('Data validation passed')
+
     # Save the data to a CSV file
     df.to_csv('jobs.csv', index=False, mode='w')
-    print('Data saved to jobs.csv with {} rows'.format(len(df)))
+    logging.info('Data saved to jobs.csv with {} rows'.format(len(df)))
 
 else:
-    print(f'Error: {response.status_code} - {response.text}') # Print the error message
+    logging.warning(f'Error: {response.status_code} - {response.text}') # Print the error message
     
