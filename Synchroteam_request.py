@@ -22,7 +22,7 @@ logging.basicConfig(
     )
 
 # Load environment variables from .env file
-load_dotenv()
+#load_dotenv()
 api_key = os.getenv('API_KEY')
 api_url = os.getenv('API_URL')
 domain = os.getenv('DOMAIN')
@@ -133,8 +133,8 @@ if all_jobs:
     plt.ylabel('Jobs', fontsize=9)
     plt.xticks(rotation=0)
     plt.tight_layout()
-    #plt.savefig('jobs_by_day.png', dpi=300) #Uncomment to save the plot
-    plt.show()
+    plt.savefig('jobs_by_day.png', dpi=300) #comment to npt save the plot
+    #plt.show()
     logging.info('Saved jobs_by_day.png')
 
     # Technician workload Trends (Jobs per Technician over Time)
@@ -148,8 +148,8 @@ if all_jobs:
     plt.xticks(rotation=45)
     plt.legend(title='Technician', bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
-    #plt.savefig('technician_workload.png', dpi=300) #Uncomment to save the plot
-    plt.show()
+    plt.savefig('technician_workload.png', dpi=300) #comment to not save the plot
+    #plt.show()
     logging.info('Saved technician_workload.png')
 
     logging.info('Data analysis completed successfully')
