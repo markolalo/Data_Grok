@@ -10,3 +10,10 @@
 .ipynb_checkpoints
 # Ignore Python byte code
 __pycache__
+#Ignore IDE specific files
+.vscode
+.idea
+# Ignore venv directories
+Grok/
+# Ignore log files
+*.log
