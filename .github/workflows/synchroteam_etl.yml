@@ -3,28 +3,29 @@ name: Synchroteam ETL Automation
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight UTC
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-    run-etl:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-            - name: Set up Python 3.x
-              uses: actions/setup-python@v2
-              with:
-                python-version: '3.x'
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-            - name: Install dependencies
-              run: |
-                python -m pip install --upgrade pip
-                pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-            - name: Run ETL script
-              env:
-                API_KEY: ${{ secrets.API_KEY }}
-                API_URL: ${{ secrets.API_URL }}
-                DOMAIN: ${{ secrets.DOMAIN }}
-              run: |
-                python Synchroteam_request.py
+      - name: Run ETL script
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_URL: ${{ secrets.API_URL }}
+          DOMAIN: ${{ secrets.DOMAIN }}
+        run: |
+          python Synchroteam_request.py
