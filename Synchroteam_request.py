@@ -37,16 +37,29 @@ auth_encoded = base64.b64encode(auth_string.encode()).decode('utf-8')
 
 # Initialize the API class
 api = SynchroteamAPI(auth_encoded)
-# Date range for the report: Last 3 days
-end_date = datetime.now().strftime('%Y-%m-%d')
-start_date = '2025-01-01 00:00:00'
+
+# Load or set the last run date
+LAST_FETCH_FILE = 'last_fetch.txt'
+def get_last_fetch():
+    try:
+        with open(LAST_FETCH_FILE, 'r') as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return '2025-01-01 00:00:00'  # Default to a date if no file exists
+def save_last_fetch(date):
+    with open(LAST_FETCH_FILE, 'w') as f:
+        f.write(date)
+
+# Set date range for incremental fetch
+last_fetch = get_last_fetch()
+end_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 params = {
-    'dateFrom': start_date,
+    'dateFrom': last_fetch, # Use the last fetch date
     'dateTo': end_date,
     'pageSize': 100
 }
 
-# Make the API call
+# Fetch new or updated jobs
 jobs_url = f'{api_url}/job/list'
 #payload = {}
 all_jobs = []
@@ -90,18 +103,16 @@ def validate_data(df):
 
 #Check if the response is valid
 if all_jobs:
-    df = pd.DataFrame(all_jobs)
+    new_df = pd.DataFrame(all_jobs)
     
     # Flatten the JSON data
     flatener = JsonFlatener(key_to_extract='name')
-    df['technician'] = df['technician'].apply(flatener.flatten_json)
-    df['customer'] = df['customer'].apply(flatener.flatten_json)
-    df['site'] = df['site'].apply(flatener.flatten_json)
-    df['type'] = df['type'].apply(flatener.flatten_json)
-    df['createdBy'] = df['createdBy'].apply(flatener.flatten_json)
+    columns_to_flatten = ['technician', 'customer', 'site', 'type', 'createdBy']
+    for column in columns_to_flatten:
+        new_df[column] = new_df[column].apply(flatener.flatten_json)
 
     # Validate the data
-    is_valid, issues = validate_data(df)
+    is_valid, issues = validate_data(new_df)
     if not is_valid:
         logging.error('Data validation failed with issues:')
         for issue in issues:
@@ -110,22 +121,47 @@ if all_jobs:
         logging.info('Data validation passed')
 
     # Save the data to a CSV file
-    df.to_csv('jobs.csv', index=False, mode='w')
-    logging.info('Data saved to jobs.csv with {} rows'.format(len(df)))
+    try:
+        existing_df = pd.read_csv('jobs.csv')
+        logging.info('Loaded existing jobs.csv')
+    except FileNotFoundError:
+        existing_df = pd.DataFrame()
+        logging.info('No existing jobs.csv found, creating a new one')
+
+    # Append new data to the existing DataFrame
+    if not existing_df.empty:
+        # Convert 'id' to string to avoid merging issues
+        existing_df['id'] = existing_df['id'].astype(str)
+        new_df['id'] = new_df['id'].astype(str)
+
+        # Merge the new data with the existing data
+        combined_df = pd.concat([existing_df, new_df]).drop_duplicates(subset=['id'], keep='last')
+
+    else:
+        combined_df = new_df
+
+    # Save the combined DataFrame to CSV
+    combined_df.to_csv('jobs.csv', index=False, mode='w')
+    logging.info('Data saved to jobs.csv with {} rows'.format(len(combined_df)))
+
+    # Update the last fetch date
+    latest_timestamp = new_df['dateModified'].max() if 'dateModified' in new_df.columns else end_date
+    save_last_fetch(latest_timestamp)
+    logging.info(f'Last fetch date updated to {latest_timestamp}')
 
     # ---- Data Analysis ----
     logging.info('Starting data analysis')
 
     # convert timestamps to datetime objects
-    df['actualStart'] = pd.to_datetime(df['actualStart'], errors='coerce')
-    df['actualEnd'] = pd.to_datetime(df['actualEnd'], errors='coerce')
-    df['scheduledStart'] = pd.to_datetime(df['scheduledStart'], errors='coerce')
+    combined_df['actualStart'] = pd.to_datetime(combined_df['actualStart'], errors='coerce')
+    combined_df['actualEnd'] = pd.to_datetime(combined_df['actualEnd'], errors='coerce')
+    combined_df['scheduledStart'] = pd.to_datetime(combined_df['scheduledStart'], errors='coerce')
     #Limit time to year 2025
-    df = df[df['scheduledStart'] >= '2025-01-01']
-    top_techs = df['technician'].value_counts().head(10).index.tolist()
+    combined_df = combined_df[combined_df['scheduledStart'] >= '2025-01-01']
+    top_techs = combined_df['technician'].value_counts().head(10).index.tolist()
     
     # Jobs Over Time (by Day)
-    jobs_by_day = df.groupby(df['scheduledStart'].dt.date).size().reset_index(name='job_count')
+    jobs_by_day = combined_df.groupby(combined_df['scheduledStart'].dt.date).size().reset_index(name='job_count')
     plt.figure(figsize=(10, 6))
     sns.lineplot(data=jobs_by_day, x='scheduledStart', y='job_count', marker='o')
     plt.title('Jobs Scheduled Over Time - Daily', fontsize=9)
@@ -133,12 +169,12 @@ if all_jobs:
     plt.ylabel('Jobs', fontsize=9)
     plt.xticks(rotation=0)
     plt.tight_layout()
-    plt.savefig('jobs_by_day.png', dpi=300) #comment to npt save the plot
+    plt.savefig('jobs_by_day.png', dpi=300) #comment to not save the plot
     #plt.show()
     logging.info('Saved jobs_by_day.png')
 
     # Technician workload Trends (Jobs per Technician over Time)
-    workload = df.groupby(['technician', df['scheduledStart'].dt.to_period('M').dt.to_timestamp()]).size().reset_index(name='job_count')
+    workload = combined_df.groupby(['technician', combined_df['scheduledStart'].dt.to_period('M').dt.to_timestamp()]).size().reset_index(name='job_count')
     workload = workload[workload['technician'].isin(top_techs)] # Filter for top technicians
     plt.figure(figsize=(14, 6))
     sns.lineplot(data=workload, x='scheduledStart', y='job_count', hue='technician', marker='o')
