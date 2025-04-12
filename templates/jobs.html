@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs List</title>
+</head>
+<body>
+    <h1>Jobs List from {{ start_date }} to {{ end_date }}</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Technician</th>
+            <th>Customer</th>
+            <th>Scheduled Start</th>
+        </tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.get('id', 'N/A') }}</td>
+            <td>{{ job.get('technician', {}).get('name', 'N/A') }}</td>
+            <td>{{ job.get('customer', {}).get('name', 'N/A') }}</td>
+            <td>{{ job.get('scheduledStart', 'N/A') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

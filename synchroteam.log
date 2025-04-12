@@ -133,3 +133,62 @@
 2025-04-05 01:54:04,016 - INFO - Saved jobs_by_day.png
 2025-04-05 01:54:04,628 - INFO - Saved technician_workload.png
 2025-04-05 01:54:04,628 - INFO - Data analysis completed successfully
+2025-04-06 14:27:33,381 - ERROR - API call failed: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7b56afcd2f00>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:33:27,417 - ERROR - API call failed: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7e77cb866b70>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:33:27,417 - ERROR - Connection error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7e77cb866b70>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:48:37,110 - ERROR - API call failed: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x76cc28c14bc0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:48:37,110 - ERROR - Connection error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x76cc28c14bc0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:48:37,110 - WARNING - No jobs were fetched. Please check the API or parameters.
+2025-04-06 14:51:29,194 - ERROR - API call failed: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x70076e2513a0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:51:29,194 - ERROR - Connection error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x70076e2513a0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 14:51:29,194 - WARNING - No jobs were fetched. Please check the API or parameters.
+2025-04-06 15:03:20,574 - ERROR - Connection error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x77521c6dfbf0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:03:20,574 - WARNING - No jobs were fetched. Please check the API or parameters.
+2025-04-06 15:03:20,575 - ERROR - No data received from the API
+2025-04-06 15:36:45,862 - ERROR - Connection error: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x72a0193ae2d0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:36:45,862 - WARNING - No jobs were fetched. Please check the API or parameters.
+2025-04-06 15:36:45,862 - ERROR - No data received from the API
+2025-04-06 15:41:27,903 - INFO - Loaded API_URL from .env: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:41:27,903 - INFO - Initialized SynchroteamAPI with base_url: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:41:27,903 - INFO - Starting API data fetch
+2025-04-06 15:41:27,903 - INFO - Making GET request to https://https://ws.synchroteam.com/Api/v3/job/list with params {'dateFrom': '2025-01-01 00:00:00', 'dateTo': '2025-04-06', 'pageSize': 100, 'page': 1}
+2025-04-06 15:41:27,927 - ERROR - Connection error on page 1: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7dca9b765e50>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:41:27,927 - ERROR - Failed URL: https://https//ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1
+2025-04-06 15:41:27,927 - WARNING - No jobs fetched. Check API credentials, URL, or parameters.
+2025-04-06 15:43:06,485 - INFO - Loaded API_URL from .env: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:43:06,485 - INFO - Initialized SynchroteamAPI with base_url: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:43:06,485 - INFO - Starting API data fetch
+2025-04-06 15:43:06,485 - INFO - Making GET request to https://https://ws.synchroteam.com/Api/v3/https://ws.synchroteam.com/job/list with params {'dateFrom': '2025-01-01 00:00:00', 'dateTo': '2025-04-06', 'pageSize': 100, 'page': 1}
+2025-04-06 15:43:06,516 - ERROR - Connection error on page 1: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/https://ws.synchroteam.com/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7b1c54368aa0>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:43:06,516 - ERROR - Failed URL: https://https//ws.synchroteam.com/Api/v3/https://ws.synchroteam.com/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1
+2025-04-06 15:43:06,516 - WARNING - No jobs fetched. Check API credentials, URL, or parameters.
+2025-04-06 15:47:36,387 - INFO - Loaded API_URL from .env: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:47:36,387 - INFO - Initialized SynchroteamAPI with base_url: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:47:36,387 - INFO - Starting API data fetch
+2025-04-06 15:47:36,387 - INFO - Making GET request to https://https://ws.synchroteam.com/Api/v3 with params {'dateFrom': '2025-01-01 00:00:00', 'dateTo': '2025-04-06', 'pageSize': 100, 'page': 1}
+2025-04-06 15:47:36,412 - ERROR - Connection error on page 1: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x717d244c4860>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:47:36,412 - ERROR - Failed URL: https://https//ws.synchroteam.com/Api/v3?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1
+2025-04-06 15:47:36,412 - WARNING - No jobs fetched. Check API credentials, URL, or parameters.
+2025-04-06 15:56:20,652 - INFO - Loaded API_URL from .env: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:56:20,652 - INFO - Initialized SynchroteamAPI with base_url: https://https://ws.synchroteam.com/Api/v3
+2025-04-06 15:56:20,652 - INFO - Starting API data fetch
+2025-04-06 15:56:20,652 - INFO - Making GET request to https://https://ws.synchroteam.com/Api/v3/job/list with params {'dateFrom': '2025-01-01 00:00:00', 'dateTo': '2025-04-06', 'pageSize': 100, 'page': 1}
+2025-04-06 15:56:20,670 - ERROR - Connection error on page 1: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /ws.synchroteam.com/Api/v3/job/list?dateFrom=2025-01-01+00%3A00%3A00&dateTo=2025-04-06&pageSize=100&page=1 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f97c9d71730>: Failed to resolve 'https' ([Errno -2] Name or service not known)"))
+2025-04-06 15:56:20,670 - WARNING - No jobs fetched. Check API credentials, URL, or parameters.
+2025-04-06 15:57:32,217 - INFO - Loaded API_URL from .env: https://ws.synchroteam.com/v3
+2025-04-06 15:57:32,217 - INFO - Initialized SynchroteamAPI with base_url: https://ws.synchroteam.com/v3
+2025-04-06 15:57:32,217 - INFO - Starting API data fetch
+2025-04-06 15:57:32,217 - INFO - Making GET request to https://ws.synchroteam.com/v3/job/list with params {'dateFrom': '2025-01-01 00:00:00', 'dateTo': '2025-04-06', 'pageSize': 100, 'page': 1}
+2025-04-06 15:57:34,755 - ERROR - Unexpected error: Expecting value: line 1 column 1 (char 0)
+2025-04-06 15:57:34,756 - WARNING - No jobs fetched. Check API credentials, URL, or parameters.
+2025-04-06 17:13:12,547 - INFO - Initialized SynchroteamAPI with base_url: https://ws.synchroteam.com/v3
+2025-04-06 17:13:12,567 - WARNING -  * Debugger is active!
+2025-04-06 17:13:12,569 - INFO -  * Debugger PIN: 127-418-466
+2025-04-06 17:13:27,773 - INFO - Initialized SynchroteamAPI with base_url: https://ws.synchroteam.com/v3
+2025-04-06 17:13:27,793 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-06 17:13:27,793 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-06 17:13:27,794 - INFO -  * Restarting with stat
+2025-04-06 17:13:28,120 - INFO - Initialized SynchroteamAPI with base_url: https://ws.synchroteam.com/v3
+2025-04-06 17:13:28,134 - WARNING -  * Debugger is active!
+2025-04-06 17:13:28,137 - INFO -  * Debugger PIN: 127-418-466
