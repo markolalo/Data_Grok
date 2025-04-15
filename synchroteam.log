@@ -316,3 +316,24 @@
 2025-04-14 02:01:29,727 - INFO - Saved jobs_by_day.png
 2025-04-14 02:01:30,343 - INFO - Saved technician_workload.png
 2025-04-14 02:01:30,343 - INFO - Data analysis completed successfully
+2025-04-15 01:59:39,411 - INFO - Fetched page 1 with 100 jobs
+2025-04-15 01:59:41,116 - INFO - Fetched page 2 with 100 jobs
+2025-04-15 01:59:42,845 - INFO - Fetched page 3 with 100 jobs
+2025-04-15 01:59:44,562 - INFO - Fetched page 4 with 100 jobs
+2025-04-15 01:59:46,314 - INFO - Fetched page 5 with 100 jobs
+2025-04-15 01:59:48,031 - INFO - Fetched page 6 with 100 jobs
+2025-04-15 01:59:49,783 - INFO - Fetched page 7 with 100 jobs
+2025-04-15 01:59:51,497 - INFO - Fetched page 8 with 100 jobs
+2025-04-15 01:59:53,232 - INFO - Fetched page 9 with 100 jobs
+2025-04-15 01:59:54,958 - INFO - Fetched page 10 with 100 jobs
+2025-04-15 01:59:56,689 - INFO - Fetched page 11 with 100 jobs
+2025-04-15 01:59:58,395 - INFO - Fetched page 12 with 100 jobs
+2025-04-15 02:00:00,104 - INFO - Fetched page 13 with 100 jobs
+2025-04-15 02:00:01,644 - INFO - Fetched page 14 with 39 jobs
+2025-04-15 02:00:02,813 - INFO - No more data available
+2025-04-15 02:00:02,836 - INFO - Data validation passed
+2025-04-15 02:00:02,863 - INFO - Data saved to jobs.csv with 1339 rows
+2025-04-15 02:00:02,863 - INFO - Starting data analysis
+2025-04-15 02:00:03,269 - INFO - Saved jobs_by_day.png
+2025-04-15 02:00:03,891 - INFO - Saved technician_workload.png
+2025-04-15 02:00:03,892 - INFO - Data analysis completed successfully
