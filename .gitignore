@@ -15,5 +15,6 @@ __pycache__
 .idea
 # Ignore venv directories
 Grok/
+venv/
 # Ignore log files
 *.log
