@@ -46,6 +46,36 @@ class SynchroteamETL:
 
         return pd.DataFrame(all_jobs)
 
+    def fetch_activities(self, start_date, end_date):
+        activities_url = f'{self.api_url}/activity/list'
+        params = {
+            'startDate': start_date,
+            'endDate': end_date,
+            'pageSize': 100
+        }
+
+        all_activities = []
+        page = 1
+
+        while True:
+            params['page'] = page
+            try:
+                response = requests.get(activities_url, headers={'Authorization': f'Basic {self.auth_encoded}'}, params=params)
+                response.raise_for_status()
+                data = response.json()
+                activities = data.get('data', [])
+                if not activities:
+                    self.logger.info('No more activities available')
+                    break
+                all_activities.extend(activities)
+                self.logger.info(f'Fetched page {page} with {len(activities)} activities')
+                page += 1
+            except requests.exceptions.HTTPError as err:
+                self.logger.error(f'Error on page {page}: {response.status_code} - {response.text}')
+                break
+
+        return pd.DataFrame(all_activities)
+
     def validate_data(self, df):
         issues = []
         missing_technicians = df['technician'].isnull() | (df['technician'] == 'Unknown')
