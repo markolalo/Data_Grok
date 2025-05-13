@@ -1210,3 +1210,57 @@
 2025-05-12 02:06:37,763 - INFO - Jobs data validation passed
 2025-05-12 02:06:37,813 - INFO - Jobs data saved to jobs.csv with 1653 rows
 2025-05-12 02:06:37,835 - INFO - Activities data saved to activities.csv with 3113 rows
+2025-05-13 02:03:47,538 - INFO - Fetched page 1 with 100 jobs
+2025-05-13 02:03:48,066 - INFO - Fetched page 2 with 100 jobs
+2025-05-13 02:03:48,517 - INFO - Fetched page 3 with 100 jobs
+2025-05-13 02:03:49,074 - INFO - Fetched page 4 with 100 jobs
+2025-05-13 02:03:49,603 - INFO - Fetched page 5 with 100 jobs
+2025-05-13 02:03:50,150 - INFO - Fetched page 6 with 100 jobs
+2025-05-13 02:03:50,703 - INFO - Fetched page 7 with 100 jobs
+2025-05-13 02:03:51,238 - INFO - Fetched page 8 with 100 jobs
+2025-05-13 02:03:51,797 - INFO - Fetched page 9 with 100 jobs
+2025-05-13 02:03:52,339 - INFO - Fetched page 10 with 100 jobs
+2025-05-13 02:03:52,869 - INFO - Fetched page 11 with 100 jobs
+2025-05-13 02:03:53,411 - INFO - Fetched page 12 with 100 jobs
+2025-05-13 02:03:53,943 - INFO - Fetched page 13 with 100 jobs
+2025-05-13 02:03:54,517 - INFO - Fetched page 14 with 100 jobs
+2025-05-13 02:03:55,064 - INFO - Fetched page 15 with 100 jobs
+2025-05-13 02:03:55,599 - INFO - Fetched page 16 with 100 jobs
+2025-05-13 02:03:56,080 - INFO - Fetched page 17 with 66 jobs
+2025-05-13 02:03:56,468 - INFO - No more data available
+2025-05-13 02:03:56,918 - INFO - Fetched page 1 with 100 activities
+2025-05-13 02:03:57,360 - INFO - Fetched page 2 with 100 activities
+2025-05-13 02:03:57,778 - INFO - Fetched page 3 with 100 activities
+2025-05-13 02:03:58,277 - INFO - Fetched page 4 with 100 activities
+2025-05-13 02:03:58,789 - INFO - Fetched page 5 with 100 activities
+2025-05-13 02:03:59,310 - INFO - Fetched page 6 with 100 activities
+2025-05-13 02:03:59,750 - INFO - Fetched page 7 with 100 activities
+2025-05-13 02:04:00,189 - INFO - Fetched page 8 with 100 activities
+2025-05-13 02:04:00,692 - INFO - Fetched page 9 with 100 activities
+2025-05-13 02:04:01,196 - INFO - Fetched page 10 with 100 activities
+2025-05-13 02:04:01,637 - INFO - Fetched page 11 with 100 activities
+2025-05-13 02:04:02,055 - INFO - Fetched page 12 with 100 activities
+2025-05-13 02:04:02,558 - INFO - Fetched page 13 with 100 activities
+2025-05-13 02:04:03,071 - INFO - Fetched page 14 with 100 activities
+2025-05-13 02:04:03,483 - INFO - Fetched page 15 with 100 activities
+2025-05-13 02:04:03,893 - INFO - Fetched page 16 with 100 activities
+2025-05-13 02:04:04,397 - INFO - Fetched page 17 with 100 activities
+2025-05-13 02:04:04,889 - INFO - Fetched page 18 with 100 activities
+2025-05-13 02:04:05,386 - INFO - Fetched page 19 with 100 activities
+2025-05-13 02:04:05,802 - INFO - Fetched page 20 with 100 activities
+2025-05-13 02:04:06,234 - INFO - Fetched page 21 with 100 activities
+2025-05-13 02:04:06,739 - INFO - Fetched page 22 with 100 activities
+2025-05-13 02:04:07,239 - INFO - Fetched page 23 with 100 activities
+2025-05-13 02:04:07,750 - INFO - Fetched page 24 with 100 activities
+2025-05-13 02:04:08,261 - INFO - Fetched page 25 with 100 activities
+2025-05-13 02:04:08,777 - INFO - Fetched page 26 with 100 activities
+2025-05-13 02:04:09,266 - INFO - Fetched page 27 with 100 activities
+2025-05-13 02:04:09,766 - INFO - Fetched page 28 with 100 activities
+2025-05-13 02:04:10,210 - INFO - Fetched page 29 with 100 activities
+2025-05-13 02:04:10,649 - INFO - Fetched page 30 with 100 activities
+2025-05-13 02:04:11,066 - INFO - Fetched page 31 with 100 activities
+2025-05-13 02:04:11,500 - INFO - Fetched page 32 with 64 activities
+2025-05-13 02:04:11,691 - INFO - No more activities available
+2025-05-13 02:04:11,699 - INFO - Jobs data validation passed
+2025-05-13 02:04:11,750 - INFO - Jobs data saved to jobs.csv with 1666 rows
+2025-05-13 02:04:11,772 - INFO - Activities data saved to activities.csv with 3164 rows
