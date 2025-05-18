@@ -1488,3 +1488,60 @@
 2025-05-17 02:00:51,201 - INFO - Jobs data validation passed
 2025-05-17 02:00:51,254 - INFO - Jobs data saved to jobs.csv with 1732 rows
 2025-05-17 02:00:51,277 - INFO - Activities data saved to activities.csv with 3365 rows
+2025-05-18 02:10:03,227 - INFO - Fetched page 1 with 100 jobs
+2025-05-18 02:10:04,673 - INFO - Fetched page 2 with 100 jobs
+2025-05-18 02:10:05,392 - INFO - Fetched page 3 with 100 jobs
+2025-05-18 02:10:06,441 - INFO - Fetched page 4 with 100 jobs
+2025-05-18 02:10:07,398 - INFO - Fetched page 5 with 100 jobs
+2025-05-18 02:10:08,161 - INFO - Fetched page 6 with 100 jobs
+2025-05-18 02:10:08,788 - INFO - Fetched page 7 with 100 jobs
+2025-05-18 02:10:09,725 - INFO - Fetched page 8 with 100 jobs
+2025-05-18 02:10:10,685 - INFO - Fetched page 9 with 100 jobs
+2025-05-18 02:10:11,758 - INFO - Fetched page 10 with 100 jobs
+2025-05-18 02:10:12,813 - INFO - Fetched page 11 with 100 jobs
+2025-05-18 02:10:13,540 - INFO - Fetched page 12 with 100 jobs
+2025-05-18 02:10:14,375 - INFO - Fetched page 13 with 100 jobs
+2025-05-18 02:10:15,102 - INFO - Fetched page 14 with 100 jobs
+2025-05-18 02:10:16,706 - INFO - Fetched page 15 with 100 jobs
+2025-05-18 02:10:17,391 - INFO - Fetched page 16 with 100 jobs
+2025-05-18 02:10:18,410 - INFO - Fetched page 17 with 100 jobs
+2025-05-18 02:10:19,615 - INFO - Fetched page 18 with 38 jobs
+2025-05-18 02:10:20,027 - INFO - No more data available
+2025-05-18 02:10:20,497 - INFO - Fetched page 1 with 100 activities
+2025-05-18 02:10:20,945 - INFO - Fetched page 2 with 100 activities
+2025-05-18 02:10:21,466 - INFO - Fetched page 3 with 100 activities
+2025-05-18 02:10:22,010 - INFO - Fetched page 4 with 100 activities
+2025-05-18 02:10:22,455 - INFO - Fetched page 5 with 100 activities
+2025-05-18 02:10:22,929 - INFO - Fetched page 6 with 100 activities
+2025-05-18 02:10:23,537 - INFO - Fetched page 7 with 100 activities
+2025-05-18 02:10:24,357 - INFO - Fetched page 8 with 100 activities
+2025-05-18 02:10:24,787 - INFO - Fetched page 9 with 100 activities
+2025-05-18 02:10:25,225 - INFO - Fetched page 10 with 100 activities
+2025-05-18 02:10:25,867 - INFO - Fetched page 11 with 100 activities
+2025-05-18 02:10:26,656 - INFO - Fetched page 12 with 100 activities
+2025-05-18 02:10:27,244 - INFO - Fetched page 13 with 100 activities
+2025-05-18 02:10:27,780 - INFO - Fetched page 14 with 100 activities
+2025-05-18 02:10:28,387 - INFO - Fetched page 15 with 100 activities
+2025-05-18 02:10:28,996 - INFO - Fetched page 16 with 100 activities
+2025-05-18 02:10:29,540 - INFO - Fetched page 17 with 100 activities
+2025-05-18 02:10:29,969 - INFO - Fetched page 18 with 100 activities
+2025-05-18 02:10:30,398 - INFO - Fetched page 19 with 100 activities
+2025-05-18 02:10:30,918 - INFO - Fetched page 20 with 100 activities
+2025-05-18 02:10:31,526 - INFO - Fetched page 21 with 100 activities
+2025-05-18 02:10:32,076 - INFO - Fetched page 22 with 100 activities
+2025-05-18 02:10:32,503 - INFO - Fetched page 23 with 100 activities
+2025-05-18 02:10:33,682 - INFO - Fetched page 24 with 100 activities
+2025-05-18 02:10:34,133 - INFO - Fetched page 25 with 100 activities
+2025-05-18 02:10:34,695 - INFO - Fetched page 26 with 100 activities
+2025-05-18 02:10:35,241 - INFO - Fetched page 27 with 100 activities
+2025-05-18 02:10:35,793 - INFO - Fetched page 28 with 100 activities
+2025-05-18 02:10:36,343 - INFO - Fetched page 29 with 100 activities
+2025-05-18 02:10:36,900 - INFO - Fetched page 30 with 100 activities
+2025-05-18 02:10:37,326 - INFO - Fetched page 31 with 100 activities
+2025-05-18 02:10:37,871 - INFO - Fetched page 32 with 100 activities
+2025-05-18 02:10:38,413 - INFO - Fetched page 33 with 100 activities
+2025-05-18 02:10:38,848 - INFO - Fetched page 34 with 87 activities
+2025-05-18 02:10:39,042 - INFO - No more activities available
+2025-05-18 02:10:39,051 - INFO - Jobs data validation passed
+2025-05-18 02:10:39,104 - INFO - Jobs data saved to jobs.csv with 1738 rows
+2025-05-18 02:10:39,127 - INFO - Activities data saved to activities.csv with 3387 rows
