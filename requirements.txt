@@ -3,3 +3,6 @@ pandas
 python-dotenv
 matplotlib
 seaborn
+numpy
+scikit-learn
+# logging (built-in)
