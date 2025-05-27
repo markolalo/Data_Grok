@@ -1,17 +1,10 @@
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 from dotenv import load_dotenv
 import os
-import time
 import logging
-import sys
-import base64
-import json
 import pandas as pd
-from api import SynchroteamAPI
-from JsonFlatener import JsonFlatener
-import matplotlib.pyplot as plt
-import seaborn as sns
+from etl import SynchroteamETL
 
 # Set up logging
 logging.basicConfig(
@@ -19,7 +12,7 @@ logging.basicConfig(
     filemode='a',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s'
-    )
+)
 
 # Load environment variables from .env file
 #load_dotenv()
@@ -114,7 +107,7 @@ if all_jobs:
     # Validate the data
     is_valid, issues = validate_data(new_df)
     if not is_valid:
-        logging.error('Data validation failed with issues:')
+        logging.error('Jobs data validation failed with issues:')
         for issue in issues:
             logging.error(issue)
     else:
@@ -191,5 +184,4 @@ if all_jobs:
     logging.info('Data analysis completed successfully')
 
 else:
-    logging.warning(f'Error: {response.status_code} - {response.text}') # Print the error message
-    
+    logging.warning('No activity data fetched for the given date range')
